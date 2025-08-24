@@ -22,25 +22,22 @@ const NavItems = ({ handleClick } : {handleClick?:() => void }) => {
         <div className="container">
             <nav>
                 {sidebarItems.map((item) => (
-                    <Link key={item.id} to={item.href}>
-                        
-                        <div>
-                           <NavLink to={item.href} key={item.id}>
-                            {({ isActive } : {isActive : boolean}) => (
-                                <div className={cn('group nav-item', {
-                                'bg-primary-100 !text-white' : isActive})}
-                                onClick={handleClick}>
-                                    <img 
-                                    src={item.icon}
-                                    alt={item.label}
-                                    className={`group-hover: brightness-0 size-5 group-hover:invert ${isActive ? 'brightness-0 invert' : 'text-dark-200'}`}
-                                    />
-                                    {item.label}
-                                </div>
-                            )}
-                            </NavLink>
-                        </div>
-                    </Link>
+                    <div key={item.id}>
+                       <NavLink to={item.href}>
+                        {({ isActive } : {isActive : boolean}) => (
+                            <div className={cn('group nav-item', {
+                            'bg-primary-100 !text-white' : isActive})}
+                            onClick={handleClick}>
+                                <img 
+                                src={item.icon}
+                                alt={item.label}
+                                className={`group-hover: brightness-0 size-5 group-hover:invert ${isActive ? 'brightness-0 invert' : 'text-dark-200'}`}
+                                />
+                                {item.label}
+                            </div>
+                        )}
+                        </NavLink>
+                    </div>
                 ))}
             </nav>
             <footer className="nav-footer">

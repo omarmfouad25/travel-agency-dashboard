@@ -1,4 +1,3 @@
-import React from 'react'
 import { Outlet, redirect } from 'react-router'
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
 import  { NavItems, MobileSidebar } from 'components';
