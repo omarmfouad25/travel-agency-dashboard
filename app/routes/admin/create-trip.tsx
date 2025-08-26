@@ -110,7 +110,7 @@ const CreateTrip = ({loaderData} : Route.ComponentProps) => {
             console.log('✅ API Success Response:', result);
             
             if(result?.id) {
-                navigate(`/admin/trips/${result.id}`)
+                navigate(`/trips/${result.id}`)
             } else {
                 console.error('❌ No ID in response:', result);
                 setError('Trip was created but navigation failed. Please check the trips list.');

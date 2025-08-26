@@ -61,8 +61,11 @@ const TripDetail = ({ loaderData }: Route.ComponentProps) => {
                 />
 
                 <InfoPill
-                    text={itinerary?.slice(0,4)
-                        .map((item) => item.location).join(', ') || ''}
+                    text={itinerary
+                        ?.map((item) => item.location)
+                        .filter((value, index, self) => self.indexOf(value) === index) // Filter unique values
+                        .slice(0, 4)
+                        .join(', ') || ''}
                     image="/assets/icons/location-mark.svg"
                 />
                     </div>
